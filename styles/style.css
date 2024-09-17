@@ -9,16 +9,43 @@
   background-color: #000028;
 }
 
+.rec-label {
+  color: var(--accent-color);
+  position: absolute;
+  top: 10px;
+  right: 9px;
+  display: inline-block;
+}
+
+.rec-label::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color); /* Цвет точки */
+  border-radius: 50%; /* Круглая форма */
+  margin-left: 10px; /* Отступ между текстом и точкой */
+  margin-bottom: 1px;
+  box-shadow: 0 0 9px 4px var(--accent-color);
+}
+
 .header__theme-menu {
   display: flex;
   justify-content: end;
+  align-items: center;
+  padding-top: 10px;
 }
 
 .header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
+  gap: 10px;
 }
 
 .header__theme-menu-button {
+  width: 70px;
+
   font-family: "IBM Plex mono", "Times New Roman", "Arial";
   text-transform: lowercase;
   color: var(--accent-color);
@@ -29,26 +56,73 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-color);
+  pointer-events: none;
 }
 
 .header {
-  background-image: url(./images/cover-image-light.png);
-  background-size: contain;
+  height: 100vh;
+  padding-bottom: 0;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr minmax(min-content, max-content) 1fr;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 24px; /* Длина границы */
+  height: 24px;
+  border-top: 1px solid var(--accent-color); /* Верхняя граница */
+  border-right: 1px solid var(--accent-color); /* Правая граница */
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 24px; /* Длина границы */
+  height: 24px;
+  border-left: 1px solid var(--accent-color); /* Левая граница */
+  border-bottom: 1px solid var(--accent-color); /* Нижняя граница */
+}
+
+.decorated-zone {
+  /* background-image: url(./images/cover-image-light.png);
+  /* z-index: 1; */
+  /* background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
 }
 
 .header__title {
+  margin: 0;
+  display: flex;
+  align-items: center;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   color: var(--header__title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
-.text_h2 {
+.header__paragraph {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0;
+}
+
+.title-decor {
   color: var(--text_h2-color);
   background-color: var(--accent-color);
   font-size: var(--font-size);
   line-height: var(--line-height);
   font-weight: bold;
+}
+
+.header .title-decor {
+  max-width: 364px;
 }

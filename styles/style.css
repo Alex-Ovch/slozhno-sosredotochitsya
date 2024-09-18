@@ -6,7 +6,12 @@
   margin: 0;
   font-size: 18px;
   padding: 0 10px 0;
-  background-color: #000028;
+  color: var(--color);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* Фон остается на месте при прокрутке */
+  background-repeat: no-repeat;
+  background-image: url("../images/cover-image.png");
 }
 
 .rec-label {
@@ -89,12 +94,9 @@
   border-bottom: 1px solid var(--accent-color); /* Нижняя граница */
 }
 
-.decorated-zone {
-  /* background-image: url(./images/cover-image-light.png);
-  /* z-index: 1; */
-  /* background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center; */
+.heading {
+  font-size: var(--font-size);
+  font-weight: bold;
 }
 
 .header__title {
@@ -116,13 +118,21 @@
 }
 
 .title-decor {
-  color: var(--text_h2-color);
+  color: var(--content__title);
   background-color: var(--accent-color);
   font-size: var(--font-size);
   line-height: var(--line-height);
   font-weight: bold;
 }
 
+.five-rules {
+  font-weight: 400;
+}
+
 .header .title-decor {
   max-width: 364px;
+}
+
+.section__title {
+  color: var(--accent-color);
 }

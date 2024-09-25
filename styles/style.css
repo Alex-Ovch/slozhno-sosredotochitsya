@@ -5,6 +5,7 @@
   font-family: "IBM Plex mono", "Times New Roman", "Arial";
   margin: 0;
   font-size: 18px;
+  line-height: 23.4px;
   padding: 0 10px 0;
   color: var(--color);
   background-position: center;
@@ -67,6 +68,7 @@
 .header {
   height: 100vh;
   padding-bottom: 0;
+  margin-bottom: 40px;
   position: relative;
   display: grid;
   grid-template-rows: 1fr minmax(min-content, max-content) 1fr;
@@ -125,8 +127,13 @@
   font-weight: bold;
 }
 
+.section .title-decor {
+  margin-bottom: 0;
+}
+
 .five-rules {
   font-weight: 400;
+  margin-top: 20px;
 }
 
 .header .title-decor {
@@ -135,4 +142,61 @@
 
 .section__title {
   color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.section-text {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.gallery {
+  margin-top: 10px;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+.in-pictures {
+  margin-bottom: 40px;
+}
+
+.images {
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  position: relative;
+  margin-top: 40px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 24px; /* Длина границы */
+  height: 24px;
+  border-top: 1px solid var(--accent-color); /* Верхняя граница */
+  border-right: 1px solid var(--accent-color); /* Правая граница */
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 24px; /* Длина границы */
+  height: 24px;
+  border-left: 1px solid var(--accent-color); /* Левая граница */
+  border-bottom: 1px solid var(--accent-color); /* Нижняя граница */
 }

@@ -12,6 +12,7 @@
   background-size: cover;
   background-attachment: fixed; /* Фон остается на месте при прокрутке */
   background-repeat: no-repeat;
+  background-color: var(--bc-color);
   background-image: var(--bc-image);
 }
 

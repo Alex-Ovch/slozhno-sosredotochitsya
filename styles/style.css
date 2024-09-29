@@ -184,7 +184,7 @@
 .heading {
   font-size: var(--font-size);
   font-weight: bold;
-  margin-top: 0px;
+  margin: 0px;
 }
 
 .header__title {

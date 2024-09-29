@@ -12,7 +12,7 @@
   background-size: cover;
   background-attachment: fixed; /* Фон остается на месте при прокрутке */
   background-repeat: no-repeat;
-  background-image: url("../images/cover-image.png");
+  background-image: var(--bc-image);
 }
 
 @media (min-width: 768px) {
@@ -23,11 +23,11 @@
 }
 
 .rec-label {
-  color: var(--accent-color);
+  color: var(--header__main-color);
   position: absolute;
   top: 10px;
   right: 9px;
-  display: inline-block;
+  display: var(--rec);
 }
 
 @media (min-width: 768px) {
@@ -63,26 +63,58 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    /* Стили карточки при ширине окна просмотра >= 1024px */
+    justify-content: center;
+    align-items: start;
+  }
+}
+
 .header__theme-menu-list {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   list-style-type: none;
   gap: 10px;
 }
 
-.header__theme-menu-button {
-  width: 70px;
+@media (min-width: 1024px) {
+  .header__theme-menu-list {
+    /* Стили карточки при ширине окна просмотра >= 1024px */
+    flex-direction: row;
+  }
+}
 
+.header__theme-menu-button {
+  padding: 0;
+  width: 70px;
   font-family: "IBM Plex mono", "Times New Roman", "Arial";
   text-transform: lowercase;
-  color: var(--accent-color);
+  color: var(--header__main-color);
   border: none;
   background-color: inherit;
   font-size: var(--font-size);
 }
 
+.header__theme-menu-button:hover {
+  display: inline-block;
+  outline: 1px solid var(--header-hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  padding: 0;
+  box-shadow: 0 1px 0 0 var(--color);
+}
+
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  padding: 0;
+  border: 1px solid var(--header__main-color);
   pointer-events: none;
 }
 
@@ -102,6 +134,17 @@
   }
 }
 
+.header .title-decor {
+  max-width: 364px;
+}
+
+@media (min-width: 1024px) {
+  .header .title-decor {
+    /* Стили карточки при ширине окна просмотра >= 1024px */
+    max-width: 491px;
+  }
+}
+
 .header::before {
   content: "";
   position: absolute;
@@ -109,8 +152,8 @@
   right: 0;
   width: 24px; /* Длина границы */
   height: 24px;
-  border-top: 1px solid var(--accent-color); /* Верхняя граница */
-  border-right: 1px solid var(--accent-color); /* Правая граница */
+  border-top: 1px solid var(--header__main-color); /* Верхняя граница */
+  border-right: 1px solid var(--header__main-color); /* Правая граница */
 }
 
 @media (min-width: 768px) {
@@ -127,8 +170,8 @@
   left: 0;
   width: 24px; /* Длина границы */
   height: 24px;
-  border-left: 1px solid var(--accent-color); /* Левая граница */
-  border-bottom: 1px solid var(--accent-color); /* Нижняя граница */
+  border-left: 1px solid var(--header__main-color); /* Левая граница */
+  border-bottom: 1px solid var(--header__main-color); /* Нижняя граница */
 }
 
 @media (min-width: 768px) {
@@ -151,13 +194,14 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   color: var(--header__title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--text-shadow);
 }
 
 @media (min-width: 768px) {
   .header__title {
     /* Стили карточки при ширине окна просмотра >= 768px */
     margin-left: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
@@ -176,6 +220,26 @@
   }
 }
 
+.highlighted-link {
+  display: inline-block;
+  line-height: 1;
+  color: inherit;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--link-shadow);
+}
+
+.highlighted-link:hover {
+  text-decoration: underline;
+}
+
+.highlighted-link:focus {
+  outline: none;
+}
+
+.highlighted-link:focus-visible {
+  outline: 1px solid var(--color);
+}
+
 .title-decor {
   color: var(--content__title);
   background-color: var(--accent-color);
@@ -184,7 +248,7 @@
   font-weight: bold;
 }
 
-.section .title-decor {
+.section.title-decor {
   margin-bottom: 0;
 }
 
@@ -194,16 +258,19 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .concentration .section-main {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: start;
+  }
+}
+
 .five-rules {
   font-weight: 400;
 }
 
-.header .title-decor {
-  max-width: 364px;
-}
-
 .section__title {
-  color: var(--accent-color);
+  color: var(--header__main-color);
   margin-bottom: 20px;
 }
 
@@ -218,6 +285,7 @@
 
 .section-paragraph {
   display: grid;
+  grid-template-rows: min-content;
   gap: 10px;
 }
 
@@ -239,9 +307,6 @@
   .concentration {
     /* Стили карточки при ширине окна просмотра >= 768px */
     margin-bottom: 80px;
-    /* display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px; */
   }
 }
 
@@ -264,7 +329,7 @@
 @media (min-width: 768px) {
   .gallery {
     /* Стили карточки при ширине окна просмотра >= 768px */
-    /* margin-bottom: 80px; */
+
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -323,7 +388,14 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   color: var(--header__title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 3px 3px 0 var(--text-shadow);
+}
+
+@media (min-width: 768px) {
+  .footer__title {
+    /* Стили карточки при ширине окна просмотра >= 768px */
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
 
 .footer {
@@ -342,8 +414,8 @@
   right: 0;
   width: 24px; /* Длина границы */
   height: 24px;
-  border-top: 1px solid var(--accent-color); /* Верхняя граница */
-  border-right: 1px solid var(--accent-color); /* Правая граница */
+  border-top: 1px solid var(--header__main-color); /* Верхняя граница */
+  border-right: 1px solid var(--header__main-color); /* Правая граница */
 }
 
 @media (min-width: 768px) {
@@ -360,8 +432,8 @@
   left: 0;
   width: 24px; /* Длина границы */
   height: 24px;
-  border-left: 1px solid var(--accent-color); /* Левая граница */
-  border-bottom: 1px solid var(--accent-color); /* Нижняя граница */
+  border-left: 1px solid var(--header__main-color); /* Левая граница */
+  border-bottom: 1px solid var(--header__main-color); /* Нижняя граница */
 }
 
 @media (min-width: 768px) {

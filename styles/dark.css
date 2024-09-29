@@ -9,5 +9,32 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  background-image: url("../images/cover-image-dark.png");
+  --color: #f1b2ce;
+  --accent-color: #ff0070;
+  --header-hover: rgba(255, 0, 112, 0.4);
+  --text-shadow: #ff0070;
+  --link-shadow: #ff0070;
+  --header__main-color: #ff0070;
+  --header__title-color: #db00ff;
+  --content__title: #000028;
+  --font-size: 18px;
+  --bc-image: url("../images/cover-image-dark.png");
+  --rec: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Дублируем переменные темной темы */
+    --color: #f1b2ce;
+    --accent-color: #ff0070;
+    --header-hover: rgba(255, 0, 112, 0.4);
+    --text-shadow: #ff0070;
+    --link-shadow: #ff0070;
+    --header__main-color: #ff0070;
+    --header__title-color: #db00ff;
+    --content__title: #000028;
+    --font-size: 18px;
+    --bc-image: url("../images/cover-image-dark.png");
+    --rec: inline-block;
+  }
 }

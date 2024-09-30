@@ -27,6 +27,7 @@
     /* Стили карточки при ширине окна просмотра >= 768px */
     top: 20px;
     right: 29px;
+    text-transform: uppercase;
   }
 }
 

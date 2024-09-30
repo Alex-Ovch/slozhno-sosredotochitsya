@@ -2,10 +2,9 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
-/* :root {
-  --color: #f1b2ce;
-  --accent-color: #ff0070;
-  --header__title-color: #db00ff;
-  --content__title: #000028;
+
+:root {
   --font-size: 18px;
-} */
+  --ln-height: 23.4px;
+  --text-shadow: #ff0070;
+}

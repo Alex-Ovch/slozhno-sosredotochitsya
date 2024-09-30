@@ -3,10 +3,8 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: "IBM Plex mono", "Times New Roman", "Arial";
-  margin: 0;
   font-size: 18px;
   line-height: 23.4px;
-  padding: 0 10px 0;
   color: var(--color);
   background-position: center;
   background-size: cover;
@@ -14,6 +12,7 @@
   background-repeat: no-repeat;
   background-color: var(--bc-color);
   background-image: var(--bc-image);
+  padding: 0 10px 0;
 }
 
 @media (min-width: 768px) {

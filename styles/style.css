@@ -12,21 +12,13 @@
   background-repeat: no-repeat;
   background-color: var(--bc-color);
   background-image: var(--bc-image);
-  padding: 0 10px 0;
-}
-
-@media (min-width: 768px) {
-  .page {
-    /* Стили карточки при ширине окна просмотра >= 768px */
-    padding: 0 20px 0;
-  }
 }
 
 .rec-label {
   color: var(--header__main-color);
   position: absolute;
   top: 10px;
-  right: 9px;
+  right: 19px;
   display: var(--rec);
 }
 
@@ -34,6 +26,7 @@
   .rec-label {
     /* Стили карточки при ширине окна просмотра >= 768px */
     top: 20px;
+    right: 29px;
   }
 }
 
@@ -120,7 +113,7 @@
 
 .header {
   height: 100vh;
-  padding-bottom: 0;
+  padding: 0 10px 0;
   margin-bottom: 40px;
   position: relative;
   display: grid;
@@ -131,6 +124,7 @@
   .header {
     /* Стили карточки при ширине окна просмотра >= 768px */
     margin-bottom: 60px;
+    padding: 0 20px 0;
   }
 }
 
@@ -149,7 +143,7 @@
   content: "";
   position: absolute;
   top: 10px;
-  right: 0;
+  right: 10px;
   width: 24px; /* Длина границы */
   height: 24px;
   border-top: 1px solid var(--header__main-color); /* Верхняя граница */
@@ -160,6 +154,7 @@
   .header::before {
     /* Стили карточки при ширине окна просмотра >= 768px */
     top: 20px;
+    right: 20px;
   }
 }
 
@@ -167,7 +162,7 @@
   content: "";
   position: absolute;
   bottom: 10px;
-  left: 0;
+  left: 10px;
   width: 24px; /* Длина границы */
   height: 24px;
   border-left: 1px solid var(--header__main-color); /* Левая граница */
@@ -178,6 +173,7 @@
   .header::after {
     /* Стили карточки при ширине окна просмотра >= 768px */
     bottom: 20px;
+    left: 20px;
   }
 }
 
@@ -291,6 +287,14 @@
 
 .section {
   margin-bottom: 50px;
+  padding: 0 10px 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    /* Стили карточки при ширине окна просмотра >= 768px */
+    padding: 0 20px 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -401,6 +405,7 @@
 .footer {
   position: relative;
   margin-top: 40px;
+  padding: 0 10px 0;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -411,7 +416,7 @@
   content: "";
   position: absolute;
   top: 10px;
-  right: 0;
+  right: 10px;
   width: 24px; /* Длина границы */
   height: 24px;
   border-top: 1px solid var(--header__main-color); /* Верхняя граница */
@@ -422,6 +427,7 @@
   .footer::before {
     /* Стили карточки при ширине окна просмотра >= 768px */
     top: 20px;
+    right: 20px;
   }
 }
 
@@ -429,7 +435,7 @@
   content: "";
   position: absolute;
   bottom: 10px;
-  left: 0;
+  left: 10px;
   width: 24px; /* Длина границы */
   height: 24px;
   border-left: 1px solid var(--header__main-color); /* Левая граница */
@@ -440,5 +446,6 @@
   .footer::after {
     /* Стили карточки при ширине окна просмотра >= 768px */
     bottom: 20px;
+    left: 20px;
   }
 }
